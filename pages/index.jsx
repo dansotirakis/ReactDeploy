@@ -1,16 +1,30 @@
 import React from "react";
 import Link from "next/link";
+import Button from '@material-ui/core/Button';
 
 import "isomorphic-fetch";
+import { Grid } from "@material-ui/core";
 
 const Home = ({ repositories }) => (
   <div>
-    <Link href="/blog">
-      <a>BLOG</a>
-    </Link>
-    {repositories.map(repo => (
-      <h1>{repo.name}</h1>
-    ))}
+    <Grid container spacing={2}>
+      <Grid item xs={12}>
+        <Link href="/blog">
+          <Button variant="contained" color="secondary">
+            BLOG
+          </Button>
+        </Link>
+      </Grid>
+      {repositories.map(repo => (
+        <Grid item xs={3}>
+          <a href={`${repo.html_url}`}>
+            <Button variant="contained" color="primary">
+              {repo.name}
+            </Button>
+          </a>
+        </Grid>
+      ))}
+    </Grid>
   </div>
 );
 
@@ -20,7 +34,7 @@ Home.getInitialProps = async () => {
   );
   const repositories = await response.json();
 
-  console.log("a");
+  console.log(repositories);
   return { repositories };
 };
 
