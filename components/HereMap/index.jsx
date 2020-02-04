@@ -15,8 +15,8 @@ const HereMap = props => {
     >
       <HMap
         style={{
-          height: '450px',
-          width: '500px'
+          height: '400px',
+          width: '80%'
         }}
         mapOptions={{
           center: { lat: -1.613817, lng: -47.482027 },
