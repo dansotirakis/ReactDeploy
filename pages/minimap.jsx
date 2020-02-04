@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import HereMap from '../components/HereMap';
+import 'isomorphic-fetch';
 
 const MiniMap = ({ repositories }) => (
   <div>
