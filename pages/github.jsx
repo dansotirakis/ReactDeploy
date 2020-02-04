@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Grid } from '@material-ui/core';
+import 'isomorphic-fetch';
 
 const GitHub = ({ repositories }) => (
   <div>
