@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import { Grid } from '@material-ui/core';
 import HereMap from '../../components/HereMap';
+import 'isomorphic-fetch';
 
-const Github = ({ repositories }) => (
+const MiniMap = ({ repositories }) => (
   <div>
     <Link href="/index">Home</Link>
     <h1>HereMap</h1>
@@ -11,4 +11,4 @@ const Github = ({ repositories }) => (
   </div>
 );
 
-export default Github;
+export default MiniMap;
