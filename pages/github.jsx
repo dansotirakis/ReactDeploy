@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Grid } from '@material-ui/core';
 
-const Github = ({ repositories }) => (
+const GitHub = ({ repositories }) => (
   <div>
     <Link href="/index">
       <a>Home</a>
@@ -16,10 +16,10 @@ const Github = ({ repositories }) => (
   </div>
 );
 
-Github.getInitialProps = async () => {
+GitHub.getInitialProps = async () => {
   const response = await fetch('https://api.github.com/users/dansotirakis/repos');
   const repositories = await response.json();
   return { repositories };
 };
 
-export default Github;
+export default GitHub;
