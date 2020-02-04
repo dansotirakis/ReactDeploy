@@ -1,9 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { Grid } from '@material-ui/core';
-import HereMap from '../../components/HereMap';
+import HereMap from '../components/HereMap';
 
-const Github = ({ repositories }) => (
+const Github = ({ props }) => (
   <div>
     <Link href="/index">Home</Link>
     <h1>HereMap</h1>
