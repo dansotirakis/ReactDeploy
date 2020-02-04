@@ -1,28 +1,31 @@
 import React from 'react';
 import Link from 'next/link';
-import Button from '@material-ui/core/Button';
 import 'isomorphic-fetch';
-import { Grid } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
+import GitHubIcon from '../commons/Icons/GitHubIcon';
+import MapIcon from '../commons/Icons/MapIcon';
 
 const Home = () => (
-  <div>
-    <Grid container spacing={2}>
-      <Grid item xs={12}>
+  <Box align="center" mt={30}>
+    <Grid container align="center" spacing={5}>
+      <Grid item xs={6}>
+        <h2>Consulta API GitHub com SSR</h2>
         <Link href="/github">
-          <Button variant="contained" style={{ color: '#FFF', background: '#AAADFF' }}>
-            GitHub
-          </Button>
+          <Box>
+            <GitHubIcon />
+          </Box>
         </Link>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={6}>
+        <h2>Utilização componente React Here Map SSR</h2>
         <Link href="/minimap">
-          <Button variant="contained" style={{ color: '#FFF', background: '#AAAD' }}>
-            HereMap
-          </Button>
+          <Box>
+            <MapIcon />
+          </Box>
         </Link>
       </Grid>
     </Grid>
-  </div>
+  </Box>
 );
 
 Home.getInitialProps = async () => {
