@@ -12,7 +12,7 @@ const GitHub = ({ repositories }) => (
     <h1>GitHub</h1>
     <Grid container spacing={2}>
       {repositories.map(repo => (
-        <Grid item xs={2}>
+        <Grid item xs={12} sm={6} md={2}>
           <Box align="center">
             <a href={`${repo.html_url}`}>
               <CodeIcon />
