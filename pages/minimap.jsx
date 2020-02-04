@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import HereMap from '../components/HereMap';
 
-const Github = ({ props }) => (
+const MiniMap = ({ repositories }) => (
   <div>
     <Link href="/index">Home</Link>
     <h1>HereMap</h1>
@@ -10,4 +10,4 @@ const Github = ({ props }) => (
   </div>
 );
 
-export default Github;
+export default MiniMap;
