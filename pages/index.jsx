@@ -15,7 +15,7 @@ const Home = () => (
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link href="/heremap">
+        <Link href="/minimap">
           <Button variant="contained" style={{ color: '#FFF', background: '#AAAD' }}>
             HereMap
           </Button>
