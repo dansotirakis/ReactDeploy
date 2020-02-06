@@ -7,7 +7,7 @@ import MapIcon from '../commons/Icons/MapIcon';
 import NextJs from '../commons/Icons/NextJs';
 
 const Home = () => (
-  <Box align="center" mt={30}>
+  <Box align="center" mt={'10%'}>
     <Grid container align="center" spacing={5}>
       <Grid item xs={12}>
         <Box>
@@ -33,11 +33,5 @@ const Home = () => (
     </Grid>
   </Box>
 );
-
-Home.getInitialProps = async () => {
-  const response = await fetch('https://api.github.com/users/dansotirakis/repos');
-  const repositories = await response.json();
-  return { repositories };
-};
 
 export default Home;
