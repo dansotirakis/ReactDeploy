@@ -1,6 +1,6 @@
 import React from 'react';
 import HPlatform, { HMap, HMapMarker } from 'react-here-map';
-import { Box, Dialog } from '@material-ui/core';
+import { Box, Dialog, Link } from '@material-ui/core';
 import { useState } from 'react';
 import { render } from '@testing-library/react';
 
@@ -15,9 +15,7 @@ const icon =
 const HereMap = props => {
   const estab = prop => {
     console.log(prop);
-    window.open(
-      "https://www.google.com/maps/place/27%C2%B032'48.3%22S+48%C2%B030'31.4%22W/@-27.5467516,-48.5109159,17z"
-    );
+    window.open(`http://maps.google.com/maps?daddr=${props.casa.latitude},${props.casa.longitude}`);
   };
   return (
     <Box>
@@ -54,6 +52,7 @@ const HereMap = props => {
           </HMap>
         </HPlatform>
       )}
+      <Link onClick={() => estab(props.casa)}>{props.casa.nome}</Link>
     </Box>
   );
 };
