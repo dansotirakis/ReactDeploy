@@ -15,7 +15,16 @@ const icon =
 const HereMap = props => {
   const estab = prop => {
     console.log(prop);
-    window.open(`http://maps.google.com/maps?daddr=${props.casa.latitude},${props.casa.longitude}`);
+
+    if (
+      /* if we're on iOS, open in Apple Maps */
+      navigator.platform.indexOf('iPhone') !== -1 ||
+      navigator.platform.indexOf('iPad') !== -1 ||
+      navigator.platform.indexOf('iPod') !== -1
+    )
+      window.open(`maps://maps.google.com/maps?daddr=${props.casa.latitude},${props.casa.longitude}`);
+    /* else use Google */ else
+      window.open(`https://maps.google.com/maps?daddr=${props.casa.latitude},${props.casa.longitude}`);
   };
   return (
     <Box>
