@@ -6,9 +6,7 @@ import 'isomorphic-fetch';
 
 const GitHub = ({ repositories }) => (
   <Box align="center">
-    <Link href="/index">
-      <a>Home</a>
-    </Link>
+    <Link href="/index">Home</Link>
     <h1>GitHub</h1>
     <Grid container spacing={2}>
       {repositories.map(repo => (
