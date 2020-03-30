@@ -1,10 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
+import React, { forwardRef } from 'react';
+import { useRouter } from 'next/router';
 import 'isomorphic-fetch';
 import { Box } from '@material-ui/core';
 import MaterialTable from 'material-table';
-import { forwardRef } from 'react';
-
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import Check from '@material-ui/icons/Check';
@@ -20,6 +18,7 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
+import Home from '../../commons/Icons/Home';
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref}/>),
@@ -40,41 +39,47 @@ const tableIcons = {
   ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref}/>),
   ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref}/>)
 };
-const Coronavirus = () => (
-  <Box align="center">
-    <Link href="/index">Home</Link>
-    <h1>Coronavírus</h1>
-    <Box>
-      <MaterialTable
-        title="Coronavírus"
-        icons={tableIcons}
-        options={{
-          paging: false,
-          search: true
-        }}
-        columns={[
-          { title: 'País', field: 'Country' },
-          { title: 'Novos Confirmados', field: 'NewConfirmed' },
-          { title: 'Total de Confirmados', field: 'TotalConfirmed' },
-          { title: 'Total de Mortos', field: 'TotalDeaths' },
-          { title: 'Sobreviventes', field: 'TotalRecovered' }
-        ]}
-        data={() =>
-          new Promise((resolve) => {
-            let url = 'https://api.covid19api.com/summary';
-            fetch(url)
-              .then(response => response.json())
-              .then(result => {
-                resolve({
-                  data: result.Countries
-                });
-              });
-          })
-        }
-      />
-    </Box>
 
-  </Box>
-);
+
+const Coronavirus = () => {
+  const router = useRouter();
+  return (
+    <Box align="center" mt={2}>
+      <Box onClick={() => router.push('/index')}>
+        <Home/>
+      </Box>
+      <h1>Coronavírus</h1>
+      <Box>
+        <MaterialTable
+          title="Coronavírus"
+          icons={tableIcons}
+          options={{
+            paging: false,
+            search: true
+          }}
+          columns={[
+            { title: 'País', field: 'Country' },
+            { title: 'Novos Confirmados', field: 'NewConfirmed' },
+            { title: 'Total de Confirmados', field: 'TotalConfirmed' },
+            { title: 'Total de Mortos', field: 'TotalDeaths' },
+            { title: 'Sobreviventes', field: 'TotalRecovered' }
+          ]}
+          data={() =>
+            new Promise((resolve) => {
+              let url = 'https://api.covid19api.com/summary';
+              fetch(url)
+                .then(response => response.json())
+                .then(result => {
+                  resolve({
+                    data: result.Countries
+                  });
+                });
+            })
+          }
+        />
+      </Box>
+    </Box>
+  );
+};
 
 export default Coronavirus;
