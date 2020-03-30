@@ -24,10 +24,10 @@ const Styled = ({ response }) => {
       <Box onClick={() => router.push('/index')}>
         <Home/>
       </Box>
-      <Title>
-        Estou com corona ?!
-      </Title>
       <Wrapper>
+        <Title>
+          Estou com corona ?!
+        </Title>
         <Title>
           {response.answer === 'yes' && 'Sim' || 'Não'}
         </Title>
