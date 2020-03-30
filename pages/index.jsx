@@ -36,6 +36,12 @@ const Home = () => {
             <Corona/>
           </Box>
         </Grid>
+        <Grid item xs={12} md={6} lg={3}>
+          <h2>Styled Components</h2>
+          <Box onClick={() => router.push('/styled-components')}>
+            <Styled/>
+          </Box>
+        </Grid>
       </Grid>
     </Box>);
 };
