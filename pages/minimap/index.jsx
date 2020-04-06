@@ -10,7 +10,7 @@ const MiniMap = ({ pins, casa }) => {
   return (
     <Box align="center">
       <Box onClick={() => router.push('/index')}>
-        <Home/>
+        <Home />
       </Box>
       <h1>HereMap</h1>
       <HereMap {...{ pins, casa }} />
@@ -18,10 +18,4 @@ const MiniMap = ({ pins, casa }) => {
   );
 };
 
-MiniMap.getInitialProps = async () => {
-  const response = await fetch('http://www.mocky.io/v2/5e3b5d332f00008f0556ca29');
-  const pins = await response.json();
-  const casa = pins.shift();
-  return { casa, pins };
-};
 export default MiniMap;
