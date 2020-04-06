@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { Box } from '@material-ui/core';
 import Home from '../../commons/Icons/Home';
 
-const CommitzenComponent = ({ data }) => {
+const Commitzen = ({ data }) => {
   const router = useRouter();
   return (
     <Box align="center" mt={'5%'} onClick={() => router.push('/index')}>
@@ -12,10 +12,10 @@ const CommitzenComponent = ({ data }) => {
   );
 };
 
-CommitzenComponent.getInitialProps = async () => {
+Commitzen.getInitialProps = async () => {
   const response = await fetch('https://api.github.com/users/dansotirakis/repos');
   const data = await response.json();
   return { data };
 };
 
-export default CommitzenComponent;
+export default Commitzen;
