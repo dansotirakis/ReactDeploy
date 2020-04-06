@@ -10,7 +10,7 @@ const GitHub = ({ repositories }) => {
   return (
     <Box align="center">
       <Box onClick={() => router.push('/index')}>
-        <Home/>
+        <Home />
       </Box>
       <h1>GitHub</h1>
       <Grid container spacing={2}>
