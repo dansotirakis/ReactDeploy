@@ -18,7 +18,7 @@ const GitHub = ({ repositories }) => {
           <Grid item xs={12} sm={6} md={2}>
             <Box align="center">
               <a href={`${repo.html_url}`}>
-                <CodeIcon/>
+                <CodeIcon />
               </a>
               <Typography>{repo.name}</Typography>
             </Box>
