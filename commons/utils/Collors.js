@@ -22,7 +22,7 @@ export const COLORS = {
   GREY_7: '#ACADAD',
   GREY_8: '#ECEDEF',
   GREY_9: '#c4c4c4',
-  GREY_10: '#ddd',
+  GREY_10: '#wiki',
   WHITE_3: '#FFFFFF',
   GRY_11: '#808080',
   WHITE_4: '#FFFFFF',
