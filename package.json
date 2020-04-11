@@ -1,37 +1,15 @@
 {
-  "name": "reactdeploy",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.8.3",
-    "@material-ui/icons": "^4.9.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "babel-eslint": "^10.0.3",
-    "dotenv": "^8.2.0",
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.5.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.16.0",
-    "husky": "^3.1.0",
-    "isomorphic-fetch": "^2.2.1",
-    "material-table": "^1.57.2",
-    "next": "^9.1.7",
-    "prettier": "^1.17.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-here-map": "^3.1.0-0",
-    "react-scripts": "3.3.0",
-    "redux-devtools-extension": "^2.13.8",
-    "styled-components": "^5.0.1"
-  },
+  "name": "react-material-dashboard",
+  "author": "DeviasIO",
+  "email": "contact@devias.io",
+  "licence": "MIT",
+  "version": "0.3.0",
+  "private": false,
   "scripts": {
-    "start": "next start",
-    "build": "next build && next export",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "next"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,15 +26,34 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "@material-ui/core": "^4.2.1",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/styles": "^4.2.1",
+    "chart.js": "^2.8.0",
+    "clsx": "^1.0.4",
+    "history": "^4.9.0",
+    "moment": "^2.24.0",
+    "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-chartjs-2": "^2.7.6",
+    "react-dom": "^16.8.6",
+    "react-perfect-scrollbar": "^1.5.3",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.0.1",
+    "recompose": "^0.30.0",
+    "underscore": "^1.9.1",
+    "uuid": "^3.3.2",
+    "validate.js": "^0.13.1"
+  },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "babel-plugin-styled-components": "^1.10.7",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.16.0",
     "husky": "^3.1.0",
-    "prettier": "^1.17.0",
-    "redux-devtools-extension": "^2.13.8"
+    "prettier": "^1.19.1",
+    "prettier-eslint": "^8.8.2"
   }
 }
