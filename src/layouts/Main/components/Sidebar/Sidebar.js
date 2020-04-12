@@ -8,11 +8,10 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import BusinessIcon from '@material-ui/icons/Business';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import SettingsIcon from '@material-ui/icons/Settings';
-// import TextFieldsIcon from '@material-ui/icons/TextFields';
-// import ImageIcon from '@material-ui/icons/Image';
+import TextFieldsIcon from '@material-ui/icons/TextFields';
+import ImageIcon from '@material-ui/icons/Image';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
-// import LockOpenIcon from '@material-ui/icons/LockOpen';
-
+import LockOpenIcon from '@material-ui/icons/LockOpen';
 
 const useStyles = makeStyles(theme => ({
   drawer: {
@@ -49,11 +48,6 @@ const Sidebar = props => {
       icon: <DashboardIcon />
     },
     {
-      title: 'Establishments',
-      href: '/establishments',
-      icon: <BusinessIcon />
-    },
-    {
       title: 'Services',
       href: '/services',
       icon: <ShoppingBasketIcon />
@@ -67,42 +61,28 @@ const Sidebar = props => {
       title: 'Settings',
       href: '/settings',
       icon: <SettingsIcon />
+    },
+    {
+      title: 'Authentication',
+      href: '/sign-in',
+      icon: <LockOpenIcon />
+    },
+    {
+      title: 'Typography',
+      href: '/typography',
+      icon: <TextFieldsIcon />
+    },
+    {
+      title: 'Icons',
+      href: '/icons',
+      icon: <ImageIcon />
     }
-    // {
-    //   title: 'Authentication',
-    //   href: '/sign-in',
-    //   icon: <LockOpenIcon />
-    // },
-    // {
-    //   title: 'Typography',
-    //   href: '/typography',
-    //   icon: <TextFieldsIcon />
-    // },
-    // {
-    //   title: 'Icons',
-    //   href: '/icons',
-    //   icon: <ImageIcon />
-    // },
   ];
 
   return (
-    <Drawer
-      anchor="left"
-      classes={{ paper: classes.drawer }}
-      onClose={onClose}
-      open={open}
-      variant={variant}
-    >
-      <div
-        {...rest}
-        className={clsx(classes.root, className)}
-      >
-        <Profile />
-        <Divider className={classes.divider} />
-        <SidebarNav
-          className={classes.nav}
-          pages={pages}
-        />
+    <Drawer anchor="left" classes={{ paper: classes.drawer }} onClose={onClose} open={open} variant={variant}>
+      <div {...rest} className={clsx(classes.root, className)}>
+        <SidebarNav className={classes.nav} pages={pages} />
       </div>
     </Drawer>
   );
