@@ -28,11 +28,7 @@ const Topbar = props => {
   const [notifications] = useState([]);
 
   return (
-    <AppBar
-      color="secondary"
-      {...rest}
-      className={clsx(classes.root, className)}
-    >
+    <AppBar color="primary" {...rest} className={clsx(classes.root, className)}>
       <Toolbar>
         <RouterLink to="/">
           <h3>(Logo)</h3>
@@ -44,18 +40,12 @@ const Topbar = props => {
               <NotificationsIcon />
             </Badge>
           </IconButton>
-          <IconButton
-            className={classes.signOutButton}
-            color="inherit"
-          >
+          <IconButton className={classes.signOutButton} color="inherit">
             <InputIcon />
           </IconButton>
         </Hidden>
         <Hidden lgUp>
-          <IconButton
-            color="inherit"
-            onClick={onSidebarOpen}
-          >
+          <IconButton color="inherit" onClick={onSidebarOpen}>
             <MenuIcon />
           </IconButton>
         </Hidden>
